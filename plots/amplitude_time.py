@@ -6,18 +6,8 @@ from scipy.io.wavfile import read
 import os
 from matplotlib import font_manager
 
-
 def pad_signals_to_same_length(signal1, signal2):
-    """
-    Pads the shorter signal with zeros to match the length of the longer signal.
 
-    Parameters:
-        signal1 (numpy.ndarray): The first signal.
-        signal2 (numpy.ndarray): The second signal.
-
-    Returns:
-        tuple: Padded signals (signal1_padded, signal2_padded).
-    """
     max_length = max(len(signal1), len(signal2))
 
     # Pad signal1
@@ -34,18 +24,7 @@ def pad_signals_to_same_length(signal1, signal2):
 
 
 def plot_amplitude_time(signal, sample_rate, save_plot=False, output_path="amplitude_time_plot.png"):
-    """
-    Plots the amplitude-time graph for a signal.
 
-    Parameters:
-        signal (numpy.ndarray): The audio signal.
-        sample_rate (int): The sample rate of the audio signal.
-        save_plot (bool): If True, save the plot to a file. Default is False.
-        output_path (str): Path to save the plot if save_plot is True.
-
-    Returns:
-        None
-    """
     # If the audio is stereo (2 channels), average it to mono
     if len(signal.shape) == 2:
         signal = signal.mean(axis=1)
@@ -83,7 +62,7 @@ def plot_amplitude_time(signal, sample_rate, save_plot=False, output_path="ampli
     plt.show()
 
 
-# Example usage
+
 wav_file_path1 = "/vector_field_process6/Echo/signals/recursion: 0, received_signal.wav"
 wav_file_path2 = "/vector_field_process6/Echo/signals/recursion: 0, received_signal_initial.wav"
 

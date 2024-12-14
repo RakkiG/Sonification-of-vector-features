@@ -49,6 +49,6 @@ ax.axis('off')
 # Show the plot
 plt.savefig("block_and_arrow_plot.png", dpi=300, bbox_inches='tight', pad_inches=0)
 with Image.open("../diagrams/block_and_arrow_plot.png") as img:
-    cropped = img.crop((20, 110, img.width, img.height) )  # 自定义裁剪范围
+    cropped = img.crop((20, 110, img.width, img.height) )  #
     cropped.save("block_and_arrow_plot.png")
 plt.show()

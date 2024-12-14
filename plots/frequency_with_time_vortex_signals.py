@@ -33,12 +33,9 @@ for wav_file in os.listdir(input_folder):
         # Plot the spectrogram
         plt.figure(figsize=(10, 6))
 
-        # 绘制 STFT 的幅度图，使用pcolormesh，调整颜色映射深度
-        # im = plt.pcolormesh(t, f, np.abs(Zxx), shading='gouraud', cmap="Blues")
-        # im.set_clim(vmin=0, vmax=np.max(np.abs(Zxx)) * 0.2)  # 加深颜色，减少最大值范围
 
         im = plt.pcolormesh(t, f, np.abs(Zxx), shading='gouraud', cmap='Blues', norm=PowerNorm(gamma=6))
-        im.set_clim(vmin=0, vmax=np.max(np.abs(Zxx)) * 0.5)  # 加深颜色，减少最大值范围
+        im.set_clim(vmin=0, vmax=np.max(np.abs(Zxx)) * 0.5)  # ，
         plt.ylim(0, 2000)  # Set frequency range to 0-2000 Hz
 
         # Apply bold font to all text elements

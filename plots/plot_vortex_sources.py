@@ -21,8 +21,8 @@ for i in range(num_segments):
 
 
 for i in range(0, num_segments - 1):
-    mid_y = (i * divide_length + (i + 1) * divide_length) / 2  # 计算中点
-    ax.plot(0, mid_y, 'ro', markersize=6)  # 绘制红色小球
+    mid_y = (i * divide_length + (i + 1) * divide_length) / 2
+    ax.plot(0, mid_y, 'ro', markersize=6)
 
 
 ax.set_xlim(-0.4, 0.4)

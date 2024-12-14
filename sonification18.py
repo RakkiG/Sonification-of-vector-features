@@ -215,7 +215,7 @@ for i in range(num_critical_sources):
 
 for i in range(num_critical_sources, len(sources)):
     #
-    random_points = generate_random_points_on_sphere(sources[f"source{i}"].positions[0], 3,8)
+    random_points = generate_random_points_on_sphere(sources[f"source{i}"].positions[0], 3,10)
     for point in random_points:
         path_points.append(point)
 
@@ -325,7 +325,7 @@ renderer.SetBackground(1, 1, 1)
 vector_field_actors = []
 
 # filename = 'vector_field_complex.vti'
-critical_points_actors, lines, vortex_lines_actor, legend_actors = tf.vector_field_actors(vector_filename)
+critical_points_actors, lines, vortex_lines_actor, legend_actors = tf.vector_field_actors(vector_filename,indices_to_remove=indices_to_remove)
 
 for critical_point_actor in critical_points_actors:
     vector_field_actors.append(critical_point_actor)

@@ -42,7 +42,7 @@ for i, n in enumerate(n_t_marks):
 
 # t_original and t_freq_change combined
 plt.hlines(-0.5, 0, max(n_ori) + 2, colors='black', linestyles='dashed')
-plt.scatter(n_freq_change, [-0.5] * len(n_freq_change), color='green', label='$t_{freq\\_change}$')
+plt.scatter(n_freq_change, [-0.5] * len(n_freq_change), color='green')
 plt.scatter(n_ori, [-0.5] * len(n_ori), color='blue')
 for i, n in enumerate(n_freq_change):
     plt.text(n, -0.4, f"{n:.2f}", color='green', ha='center', fontsize=9)
