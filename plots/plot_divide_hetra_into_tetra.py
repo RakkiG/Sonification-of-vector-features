@@ -6,7 +6,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection, Line3DCollection
 import os
 
-output_dir = "../diagrams"
+output_dir = "../../../../Downloads/Sonification-of-vector-features-main/diagrams"
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
@@ -58,12 +58,28 @@ for pos, label, offset in labels_positions:
             pos[2] + offset[2],
             label, color='black', fontsize=20, ha='center', va='center', fontweight='bold')
 
-line_pairs = [
-    (positions[0], positions[6]),  # (0, 6)
-    (positions[1], positions[3]),  # (1, 3)
-    (positions[1], positions[4]),  # (1, 4)
-    (positions[1], positions[6]),  # (1, 6)
-    (positions[3], positions[6])   # (3, 6)
+# line_pairs = [
+#     (positions[0], positions[6]),  # (0, 6)
+#     (positions[1], positions[3]),  # (1, 3)
+#     (positions[1], positions[4]),  # (1, 4)
+#     (positions[1], positions[6]),  # (1, 6)
+#     (positions[3], positions[6]),   # (3, 6)
+# (positions[4], positions[7])  , #(1,3)
+# ]
+
+
+line_pairs=[
+(positions[4], positions[7])  , #(1,3)
+    (positions[7],positions[1]),#(1,6)
+    (positions[7],positions[2]), #(1,4)
+    (positions[6],positions[1]) , #(0,6)
+    (positions[4],positions[1]), #(3,6)
+(positions[4],positions[2]), #(3,4)
+
+(positions[2],positions[1]) #(4,6)
+
+
+
 ]
 
 for pair in line_pairs:
